@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: appsec_db
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: SecurePassword123!
+      POSTGRES_DB: appdb
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:alpine
+    container_name: appsec_cache
+    ports:
+      - "6379:6379"
